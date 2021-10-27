@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tivadar_Ana_Maria_Lab2"
         mc:Ignorable="d"
-        Title="Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Loaded="frmMain_Loaded">
+        Title="Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
     <Grid>
         <Label x:Name="lblTitle" Content="Doughnuts - Bake &amp; Sale" FontSize="24" FontWeight="Bold" Margin="244,18,265,375"/>
         <GroupBox x:Name="gbRaised" Header="Raised" FontWeight="Bold" Margin="102,75,460,217">
@@ -13,12 +13,12 @@
                 <GroupBox x:Name="gbFilled" Header="Filled" Height="146" Width="248" Canvas.Left="372" Canvas.Top="-14">
                     <Canvas>
                         <Label x:Name="lblGlazedRaised" Content="Glazed" FontWeight="Normal" Canvas.Left="-374" Canvas.Top="11"/>
-                        <TextBox x:Name="txtGlazedRaised" Text="0" TextWrapping="Wrap" Width="91" FontWeight="Regular" IsReadOnly="True" Height="25" Canvas.Left="-303" RenderTransformOrigin="0.5,0.5" Canvas.Top="11">
+                        <TextBox x:Name="txtGlazedRaised" Text="0" TextWrapping="Wrap" Width="91" FontWeight="Regular" IsReadOnly="True" Height="23" Canvas.Left="-303" RenderTransformOrigin="0.5,0.5" Canvas.Top="14">
                             <TextBox.RenderTransform>
                                 <TransformGroup>
-                                    <ScaleTransform ScaleY="1"/>
+                                    <ScaleTransform ScaleY="-1"/>
                                     <SkewTransform/>
-                                    <RotateTransform Angle="-719.966"/>
+                                    <RotateTransform/>
                                     <TranslateTransform/>
                                 </TransformGroup>
                             </TextBox.RenderTransform>
@@ -38,7 +38,7 @@
         <GroupBox x:Name="bgSale" Header="Current Sale" Margin="74,236,74,23" FontWeight="Bold">
             <Canvas>
                 <Label x:Name="lblQuantity" Content="Quantity" FontWeight="Normal" Canvas.Left="17" Canvas.Top="2"/>
-                <TextBox x:Name="txtQuantity" Text="0" TextWrapping="Wrap" Width="43" Canvas.Left="78" TextChanged="txtQuantity_TextChanged" Height="24" Canvas.Top="3" FontWeight="Normal" KeyUp="txtQuantity_KeyPress"/>
+                <TextBox x:Name="txtQuantity" Text="0" TextWrapping="Wrap" Width="43" Canvas.Left="78" TextChanged="txtQuantity_TextChanged" Height="24" Canvas.Top="3" FontWeight="Normal"/>
                 <Label x:Name="lblType" Content="Type" Canvas.Left="142" FontWeight="Normal"/>
                 <ListBox x:Name="listSale" Height="61" Width="498" Canvas.Top="42" Canvas.Left="10"/>
                 <Label x:Name="lblTotal" Content="Total" Canvas.Left="320" Canvas.Top="116" FontWeight="Bold"/>
@@ -54,23 +54,18 @@
         <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top"
 Width="131" Margin="0,26,0,0">
             <MenuItem Header="File">
-                <MenuItem Header="Exit" Click="exitToolStripMenuItem_Click"/>
+                <MenuItem Header="Exit"/>
             </MenuItem>
             <MenuItem Header="_Doughnuts">
                 <MenuItem Header="Make">
                     <MenuItem Header="Raised">
-                        <MenuItem x:Name="glazedToolStripMenuItem" Header="Glazed"
-Click="glazedToolStripMenuItem_Click" IsCheckable="True"/>
-                        <MenuItem x:Name="sugarToolStripMenuItem" Header="Sugar"
-IsCheckable="True" Click="sugarToolStripMenuItem_Click"/>
+                        <MenuItem x:Name="glazedMenuItem" Header="Glazed"/>
+                        <MenuItem x:Name="sugarMenuItem" Header="Sugar"/>
                     </MenuItem>
                     <MenuItem Header="Filled"/>
                 </MenuItem>
-                <MenuItem x:Name="mnuStop" Header="Stop"
-Click="stopToolStripMenuItem_Click"/>
             </MenuItem>
         </Menu>
-
 
     </Grid>
 </Window>
